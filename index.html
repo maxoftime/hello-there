@@ -1,0 +1,42 @@
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet">
+    
+    <title>Go beyond the door</title>
+</head>
+<body style="position: relative;">
+        
+    <h1 class="logo" style="z-index: 5;">
+        <span id="nonEditable">FAMILJEN</span>
+        <span id="editable">FAMILJEN</span>
+        <span class="cursor">_</span>
+    </h1>
+    <video style="display: none;" autoplay="autoplay" id="videoCapture"></video>
+    <canvas id="videoCanvas" width="1280" height="720" style="display: none;"></canvas>
+    <canvas id="tabulaRasa" width="1280" height="720"></canvas>
+        
+    <script src="js/colorStuff.js"></script>
+    <script src="js/messageStuff.js"></script>
+    <script src="js/camStuff.js"></script>
+    <script src="js/trackStuff.js"></script> 
+
+    <script>
+        window.addEventListener('load', function() {
+            let videoPlayer = document.getElementById('videoCapture');
+            let videoCanvas = document.getElementById('videoCanvas');
+            let paintingCanvas = document.getElementById('tabulaRasa');
+
+            startCamFeed(videoPlayer);
+
+            
+            /* setInterval(function() {
+                motionDetection(videoPlayer, videoCanvas, paintingCanvas);
+            }, 50); */
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Familjen+Grotesk:ital,wght@1,700&display=swap');
+
+@font-face {
+    font-family: 'Familjen-Logo';
+    src: url("fonts/FamiljenLogofontGX.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'FamiljenWTF';
+  src: url("fonts/FamiljenWTFVF.woff2") format("woff2-variations"), url("fonts/FamiljenWTFVF.woff") format("woff-variations");
+}
+
+html,body{
+  height:100%
+}
+
+body {
+  background: #000;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  flex-direction: column;
+  --shadowHue: 0;
+  --shadowSaturation: 85%;
+  --shadowLightness: 50%;
+  --shadowOpacity: 0.6;
+  --shadow: hsla(var(--shadowHue), var(--shadowSaturation), var(--shadowLightness), var(--shadowOpacity));
+  --shadowGray: rgba(255, 238, 238, 0.1);
+  --shadowBlue: rgb(15, 2, 255);
+  animation: hueShift 45s infinite;
+  overflow: hidden;
+  position: relative;
+}
+
+@keyframes hueShift {
+  100% {
+    --shadowHue: 360;
+  }
+}
+
+.logo {
+    transform: translateX(2vw);
+    margin: auto;
+    font-size: 11vw;
+    font-family: 'Familjen-Logo', 'Familjen Grotesk';
+    color: #fee;
+    outline: none;
+    cursor: none;
+    border-color: var(--shadow);
+    text-shadow:  0 -40px 100px var(--shadowGray),
+                    0 0 2px var(--shadowGray),
+                    0 0 1em var(--shadow),
+                    0 0 0.5em var(--shadow),
+                    0 0 0.1em var(--shadow),
+                    0 10px 3px #000;
+}
+
+#nonEditable {
+    font-family: 'Familjen-Logo';
+}
+
+#editable {
+    font-size: 7vw;
+    display: none;
+    font-family: 'Familjen Grotesk';
+}
+
+.cursor {
+    margin-left: -5vw;
+    font-size: 8vw;
+    animation: cursorBlink 1.3s infinite;
+}
+
+@keyframes cursorBlink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+#tabulaRasa {
+  z-index: 2;
+  position: absolute;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  transform: scaleX(-1);
+  font-variation-settings: 'WDIN' 115;
+}
